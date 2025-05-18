@@ -1,0 +1,85 @@
+• 파일 소유자 바꾸기
+$ sudo chown newuser:newgroup target.file
+(파일 소유자는 newuser로 소유 그룹은 newgroup으로 바꾸기)
+• 현재 및 하위에 있는 모든 파일과 디렉토리 소유자 바꾸기
+$ sudo chown aaa:bbb -r *
+(유자를 aaa로 바꾸고 소유 그룹을 bbb로 바꾸기)
+• 로그인한 계정명 보기
+$ whoami
+• 로그인한 계정과 관계없이 root로 변경하기
+$ sudo whoami
+• 계속 루트 계정으로 사용하기
+$ sudo su -
+(exit 명령어를 치면 원상복귀됨)
+• 루트권한 탈출하기
+# exit
+• 시스템 모든 파일 삭제하기(주의! 주의!)
+# rm -rf /
+(악의적으로 루트권한 얻어서 이런 명령을 벌인다면, 끔찍 !! )
+• 프로세스 확인하기
+$ p
+• 프로세스 죽이기
+$ kill -9 3290
+• 모든 프로세스 보기
+$ ps -aux
+• 프로세스 모니터링하기
+$ top
+(종료는 q를 누른다)
+• 현재 남은 메모리 크기 확인하기
+$ free -m
+• 저장장치 목록과 사용량 보기
+$ df -h
+• 각각의 폴더 용량 확인
+$ du -h /home/aaa
+
+• zip으로 압축하기
+$ zip test.zip source
+• zip으로 압축 풀기
+$ unzip test.zip
+• tar.gz로 압축하기
+$ tar -czvf test.tar.gz *. jpg
+• tar.gz로 압축 풀기
+$ tar -xzvf test.tar.gz
+$ tar -xvf test.tar
+(압축은 하지 않고 tar로 파일만 묶어놓은 파일 형식의 경우)
+• 링크 파일 만들기
+$ In -s src.txt dest.txt
+(src.txt 파일이 원본 파일, dest.txt 파일이 새로 생성될 링크 파일)
+• 특정 파일 찾기
+$ find . -name ' *. jpg
+(현재와 하위 디렉토리 검색해서 모든 jpg 파일 찾기)
+$ find / -name 'Music' -type d
+(루트 디렉토리부터 전부 검색해서 Music이라 폴더 찾기)
+$ whereis vi
+(vi 실행 파일이 어디 있는지 찾기)
+$ locate test.txt
+(해당 파일명이 포함된 파일들 검색)
+• 파일 내용 검색하기
+$ find . -name ' *. txt' | xargs grep -n test
+(확장자가 txt인 파일 내용 중에 test 문자열을 포함하는 파일 찾기)
+$ grep -r test ./
+(현재, 하위 디렉토리 검색 후 test라는 문자열을 가지고 있는 파일 찾기)
+$ cat test.txt
+(파일 내용 살펴보기)
+$ tail -n 50 test.txt
+(파일 내용의 끝 부분 50줄만 보여주기, 반대는 head 명령어)
+
+• 파이프 명령어(명령어끼리 조합하기)
+$ ls | more
+$ cat test.txt | more
+(파일 내용을 한 줄씩 키보드 커서를 이용해서 살펴본다. 종료는 q를 누름)
+$ ps -aux | grep init
+(프로세스 목록을 얻어와 init이라는 단어를 찾아 해당 라인만 보여줌)
+• 리다이렉션
+$ ls > result.txt
+(Is 명령 결과를 result,txt라는 파일에 저장)
+$ grep init < text.txt
+(파일을 읽어서 init이라는 단어가 있는 줄만 화면에 출력)
+환경변수 설정하기
+$ export JAVA_HOME=/usr/bin/jvm/java
+• 환경변수 목록 보기
+$ env
+• 특정 환경변수 보기
+$ echo $PATH
+• PATH 환경 변수에 디렉토리 추가하기
+$ export PATH=/home/jundols:$PATH
