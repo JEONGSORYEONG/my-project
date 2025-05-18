@@ -1,0 +1,96 @@
+• 터미널 종료하기
+$ exit
+• 현재 콘솔에서 자신의 위치 확인하기
+$ pwd
+
+• 상위 디렉토리로 이동하기
+$ cd ..
+
+• 홈디렉토리로 이동하기
+$ cd ~
+• 디렉토리 이동하기
+$ cd jundols
+• 현재 디렉토리 파일과 서브 디렉토리 목록 보기
+$ 1s
+• 현재 디렉토리 파일과 서브 디렉토리 목록 자세히 보기
+$ ls -1
+• 파일 복사
+$ cp 원본_파일 대상_파일
+$ cp /home/jundols/examples.desktop /home/jundols/test.desktop
+$ cp ./examples.desktop ./test.desktop
+• 파일 이동
+$ mv ./examples.desktop ./test.desktop
+• 디렉토리 복사
+$ cp -r ./Music ./MusicCopy
+• 파일 삭제
+$ rm ./test.desktop
+• 디렉토리 삭제
+$ rm -rf ./MusicCopy
+• 디렉토리 생성과 삭제
+$ mkdir newdir
+$ rmdir dirname
+• 명령어 자동 완성 기능
+$ rm ex<tab>
+
+• 특수기호 활용하기
+$ cp test* ./subdir
+$ mv * ./subdir
+$ cp test? ./subdir
+• 프로그램을 콘솔에서 설치하기
+$ sudo apt-get install docky
+• 패키지 정보를 최신으로 갱신하기
+$ sudo apt-get update
+• 우분투 버전 업그레이드
+$ sudo apt-get dist-upgrade
+• 갱신된 패키지 업그레이드
+$ sudo apt-get upgrade
+• 패키지 정보 보기
+$ apt-cache show 패키지명
+• 패키지를 새로 설치하기
+$ sudo apt-get install 패키지명
+• 패키지 제거하기
+$ sudo apt-get remove 패키지명
+• 사용하지 않는 패키지 설치파일 자동 제거하기
+$ sudo apt-get autoclean
+• 설치된 패키지 목록 보기
+$ apt-cache pkgnames
+• 네트워크 연결에 문제 없나 확인하기
+$ ping google.com
+• 네트워크 장치 목록 보여주기
+$ ifconfig
+• 네트워크 연결 상태 모니터링하기
+$ netstat -at
+• 인터넷 라우팅 테이블 정보 보기
+$ route
+• 시스템 재시작하기
+$ sudo reboot
+• 시스템 종료하기
+$ sudo shutdown now
+또는
+$ sudo halt
+
+• 일정 시간 뒤 종료하기
+$ sudo shutdown -h 10 (10분 뒤에 종료)
+$ sudo shutdown -h 8:30 (8시 30분에 종료)
+• 일정 시간 뒤에 재시작하기
+$ sudo shutdown -r 10 (10분 뒤에 재시작)
+$ sudo shutdown -r 8:30 (8시 30분에 재시작)
+• 종료 또는 재시작 예약 취소
+$ sudo shutdown -c
+• 저장 장치의 다양한 정보 보기
+$ df
+• df 명령어보다 세부적으로 보기
+$ mount
+• 파일 실행권한 변경하기
+$ chmod u-x Music
+(Music 디렉토리의 소유자 권한 중에서 실행권한 제거)
+$ chmod go+rwx Music
+(Music 디렉토리의 소유 그룹과 제3자에게 읽기 쓰기 실행권한 모두 부여)
+$ chmod o-xw Music
+(Music 디렉토리의 제3자에게 실행과 쓰기 권한 제거)
+• 숫자로 실행권한 변경하기
+$ chmod 755 Music
+(소유자에게는 권한 전부를 부여하고 소유그룹과 제3자에게는 읽기와 실
+행 권한만 부여)
+$ chmod 300 Music
+(소유자는 쓰기와 실행 권한, 소유 그룹과 제 3자에게는 어떤 권한도 없음)
